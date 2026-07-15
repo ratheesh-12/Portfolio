@@ -35,11 +35,12 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-20 relative">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
-                    <p className="text-gray-400">Turning ideas into secure digital experiences.</p>
+                    <p className="text-gray-400 text-lg">Turning ideas into secure digital experiences.</p>
+                    <div className="w-20 h-1 bg-gradient-to-r from-accent via-ocean to-water-light mx-auto rounded-full shadow-water mt-4"></div>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -50,33 +51,38 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="glass rounded-2xl overflow-hidden group hover:border-primary/50 transition-all duration-300"
+                            className="ios-card overflow-hidden group"
                         >
-                            <div className="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
-                                <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-all duration-500"></div>
+                            <div className="h-48 bg-gradient-to-br from-dark-card via-ocean/20 to-dark-card relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-ocean/10 to-water-dark/20 group-hover:from-accent/30 group-hover:via-ocean/20 group-hover:to-water-dark/30 transition-all duration-500"></div>
+                                <div className="absolute inset-0 backdrop-blur-sm"></div>
                                 {/* Placeholder for project thumbnail */}
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-600 font-bold text-xl group-hover:scale-110 transition-transform duration-500">
+                                <div className="absolute inset-0 flex items-center justify-center text-accent/60 font-bold text-xl group-hover:scale-110 group-hover:text-accent transition-all duration-500">
                                     {project.title}
+                                </div>
+                                {/* Water ripple effect */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-accent/20 rounded-full blur-xl transform -translate-x-1/2 -translate-y-1/2"></div>
                                 </div>
                             </div>
 
                             <div className="p-6">
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
+                                <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">{project.description}</p>
 
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tech.map((t) => (
-                                        <span key={t} className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">
+                                        <span key={t} className="text-xs font-medium text-accent bg-gradient-to-r from-accent/10 to-ocean/10 px-3 py-1.5 rounded-full border border-accent/20">
                                             {t}
                                         </span>
                                     ))}
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white hover:text-primary transition-colors">
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors font-medium">
                                         <Github size={16} /> Code
                                     </a>
-                                    <a href={project.live} className="flex items-center gap-2 text-sm text-white hover:text-primary transition-colors">
+                                    <a href={project.live} className="flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors font-medium">
                                         <ExternalLink size={16} /> Demo
                                     </a>
                                 </div>
@@ -89,9 +95,9 @@ const Projects = () => {
                     <a
                         href="https://github.com/ratheesh-12?tab=repositories"
                         target="_blank"
-                        className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium"
+                        className="inline-flex items-center gap-2 px-8 py-4 frosted-glass border-2 border-accent/50 text-accent font-semibold rounded-2xl hover:bg-accent/10 hover:border-accent transition-all hover:scale-105 duration-300 shadow-ios"
                     >
-                        View All Projects <ExternalLink size={16} />
+                        View All Projects <ExternalLink size={18} />
                     </a>
                 </div>
             </div>

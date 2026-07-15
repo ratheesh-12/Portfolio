@@ -13,14 +13,17 @@ const socialLinks = [
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-20 bg-black/50">
-            <div className="max-w-7xl mx-auto px-6 text-center">
+        <section id="contact" className="py-20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent"></div>
+            <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let’s Connect & Collaborate</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-ocean to-water-light">Let's Connect & Collaborate</span>
+                    </h2>
                     <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
                         Join me as I build, secure, and share the future of the web. Whether you have a project in mind or just want to say hi, I'm always open to new opportunities.
                     </p>
@@ -32,30 +35,30 @@ const Contact = () => {
                                 href={social.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`p-4 glass rounded-full text-gray-400 border border-white/5 transition-all hover:scale-110 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.2)] ${social.color}`}
+                                className={`p-5 ios-card text-gray-400 transition-all hover:scale-110 hover:border-accent/50 hover:shadow-water ${social.color}`}
                             >
                                 <social.icon size={24} />
                             </a>
                         ))}
                     </div>
 
-                    <div className="mt-16 p-8 glass rounded-2xl max-w-3xl mx-auto border border-white/5">
+                    <div className="mt-16 p-8 ios-card max-w-3xl mx-auto">
                         <form className="grid gap-6 text-left">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-gray-400 text-sm mb-2">Name</label>
-                                    <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
+                                    <label className="block text-gray-400 text-sm font-medium mb-2">Name</label>
+                                    <input type="text" className="w-full bg-dark-card/50 border border-accent/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent focus:shadow-water transition-all" placeholder="Your Name" />
                                 </div>
                                 <div>
-                                    <label className="block text-gray-400 text-sm mb-2">Email</label>
-                                    <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" />
+                                    <label className="block text-gray-400 text-sm font-medium mb-2">Email</label>
+                                    <input type="email" className="w-full bg-dark-card/50 border border-accent/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent focus:shadow-water transition-all" placeholder="your@email.com" />
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-gray-400 text-sm mb-2">Message</label>
-                                <textarea rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Your Message"></textarea>
+                                <label className="block text-gray-400 text-sm font-medium mb-2">Message</label>
+                                <textarea rows={4} className="w-full bg-dark-card/50 border border-accent/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent focus:shadow-water transition-all" placeholder="Your Message"></textarea>
                             </div>
-                            <button className="bg-primary text-black font-bold py-3 px-8 rounded-lg hover:bg-cyan-400 transition-colors w-full md:w-auto self-start">
+                            <button className="bg-gradient-to-r from-accent via-ocean to-water-dark text-white font-bold py-4 px-8 rounded-2xl hover:shadow-ios-lg transition-all w-full md:w-auto self-start hover:scale-105 duration-300">
                                 Send Message
                             </button>
                         </form>
