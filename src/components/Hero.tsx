@@ -84,11 +84,11 @@ const Hero = () => {
 
                     <div className="flex gap-8 border-t border-gray-800 pt-8">
                         <div>
-                            <h3 className="text-3xl font-bold text-white">20+</h3>
+                            <h3 className="text-3xl font-bold text-white">5+</h3>
                             <p className="text-gray-500 text-sm">Projects</p>
                         </div>
                         <div>
-                            <h3 className="text-3xl font-bold text-white">5+</h3>
+                            <h3 className="text-3xl font-bold text-white">10+</h3>
                             <p className="text-gray-500 text-sm">Certifications</p>
                         </div>
                         <div>
